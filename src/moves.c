@@ -25,7 +25,7 @@ void    ft_push_ab(t_stack **stack_from, t_stack **stack_dest)
     
 }
 
-void    ft_swap_ab(t_stack **stack)
+/*void    ft_swap_ab(t_stack **stack)
 {
     t_stack *nodo3;
     t_stack *nodo1;
@@ -40,7 +40,48 @@ void    ft_swap_ab(t_stack **stack)
     (*stack)->next = nodo1; //El primer nodo va a apuntar al nodo1
     nodo1->next = nodo3; //El nodo1 va a apuntar al nodo3
     //PUTA RAYADA. FUNCIONA SIN LEAKS
-    
+}*/
 
+void    ft_swap_ab(t_stack *stack)
+{
+    long int nb;
+    int index;
+
+    nb = stack->value;
+    stack->value = stack->next->value;
+    stack->next->value = nb;
     
+    index = stack->index;
+    stack->index = stack->next->index;
+    stack->next->index = index;
+}
+
+void ft_reverse_rotate(t_stack *stack)
+{
+    long int nb;
+    int     index;
+
+    long int nb2;
+    int     index2;
+    t_stack *tmp;
+    if (ft_stacksize(stack) == 2)
+    {
+        ft_swap_ab(stack);
+        return ;
+    }
+    tmp = ft_stacklast(stack);
+    nb = tmp->value;
+    index = tmp->index;
+    printf("\n%ld\n%d", nb, index);
+    nb2 = stack->value;
+    index2 = stack->index;
+    stack->value = nb;
+    stack->index = index;
+    stack = stack->next;
+    while (stack->next->next!= NULL)
+    {
+        
+    }
+
+
 }

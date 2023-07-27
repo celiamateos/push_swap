@@ -17,7 +17,7 @@ void    ft_leaks(void)
 
 int main(int argc, char **argv)
 {
-    atexit(ft_leaks);
+    //atexit(ft_leaks);
     t_stack     **stack_a;
     t_stack     **stack_b;
     int         stack_size;
@@ -41,6 +41,8 @@ int main(int argc, char **argv)
     }
 
     stack_size = ft_stacksize(*stack_a);
+    if (!stack_size)
+        return (0);
     //printf("\nStack_a tiene %i nodos", stack_size);
     ft_check_arg(stack_a);
     stack_b = (t_stack **)malloc(sizeof(t_stack));
@@ -50,9 +52,10 @@ int main(int argc, char **argv)
     ft_index(stack_a, stack_size);
 
     ft_print_stack(*stack_a, *stack_b);
-    ft_swap_ab(stack_a);
+    //ft_swap_ab(*stack_a);
     //ft_push_ab(stack_a, stack_b);
-    printf("\n\n\n\n DESPUÉS DE PUSH B");
+    ft_reverse_rotate(*stack_a);
+    printf("\n\n\n\n DESPUÉS DE ROTATE:");
     ft_print_stack(*stack_a, *stack_b);
     exit (1);
     return (0);
@@ -70,7 +73,8 @@ void    ft_print_stack(t_stack *stack_a, t_stack *stack_b)
         printf("\n\nStack_b is null");
     while (stack_a)
     {
-       printf("\nSTACK_A:%ld", stack_a->value);
+       printf("\nSTACK_A VALUE:%ld", stack_a->value);
+       printf("\nSTACK_A      index:%d", stack_a->index);
        stack_a = stack_a->next;
     }
     printf("\n\n\n");

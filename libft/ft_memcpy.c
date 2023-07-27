@@ -20,7 +20,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	destination = dst;
 	source = src;
 	i = 0;
-	if (dst != '\0' || src != '\0')
+	if (dst || src)
 	{
 		while (i < n)
 		{

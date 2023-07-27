@@ -18,11 +18,9 @@ void    ft_fill_stack(char *arg, t_stack **stack_a)
 {
     int i;
     int is_str;
-    long int    nb;
 
     i = 0;
     is_str = 0;
-    nb = 0;
     while (arg[i])
     {
         if ((arg[i] > '9' && arg[i] != ' ' && arg[i] != '-')

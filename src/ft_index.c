@@ -16,7 +16,7 @@ void    ft_index(t_stack **stack_a, int stack_size)
 {
     t_stack **temp;
 
-    temp = (t_stack **)malloc(sizeof(t_stack));
+    //temp = (t_stack **)malloc(sizeof(t_stack));
     temp = stack_a;
     printf("\nStack_size%i\n\n", stack_size);
     while (stack_size > 0)
@@ -24,13 +24,6 @@ void    ft_index(t_stack **stack_a, int stack_size)
         ft_bignum(*stack_a, *temp, stack_size);
         stack_size--;
     }
-
-    //ft_stackclear(temp);
-    //*temp = NULL;
-    //printf("\ndic mem temp%p", temp);
-    //temp = NULL;
-    //free (temp);
-   //1 LEAKS DE MEMORIA POR TEMP; pero si lo libero aqui, borro tn stack_A T.T
 }
 
 void    ft_bignum(t_stack *stack_a, t_stack *temp, int stack_size)
@@ -52,8 +45,7 @@ void    ft_bignum(t_stack *stack_a, t_stack *temp, int stack_size)
             else if ((stack_a->value < temp->value && temp->index == -1)
                 && (temp->next == NULL))
             {
-                while (stack_a->next != NULL)
-                    stack_a = stack_a->next;
+                stack_a = ft_stacklast(stack_a);
                 break ;
             }
             else
@@ -68,6 +60,6 @@ void    ft_bignum(t_stack *stack_a, t_stack *temp, int stack_size)
             stack_a = stack_a->next;
     }
     stack_a->index = stack_size;
-    //printf("\nBIGNUM:%li", stack_a->value);
-    //printf("\n         index =%i", stack_a->index);
+    printf("\nBIGNUM:%li", stack_a->value);
+    printf("\n         index =%i", stack_a->index);
 }

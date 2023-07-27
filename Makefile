@@ -24,8 +24,7 @@ BROWN =	\033[38;2;184;143;29m
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-#-fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 RM = rm -f
 LIBFT_DIR = libft/
 LIBFT = $(LIBFT_DIR)libft.a

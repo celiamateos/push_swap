@@ -13,5 +13,7 @@
 
 void    push_swap(char *argv)
 {
+    if (!argv)
+        return ;
     argv = "1";
 }
