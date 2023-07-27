@@ -24,7 +24,9 @@ void    ft_index(t_stack **stack_a, int stack_size)
         ft_bignum(*stack_a, *temp, stack_size);
         stack_size--;
     }
+
     //ft_stackclear(temp);
+    //*temp = NULL;
     //printf("\ndic mem temp%p", temp);
     //temp = NULL;
     //free (temp);
@@ -62,6 +64,8 @@ void    ft_bignum(t_stack *stack_a, t_stack *temp, int stack_size)
             stack_a = stack_a->next;
             temp = temp->next;
         }
+        else
+            stack_a = stack_a->next;
     }
     stack_a->index = stack_size;
     //printf("\nBIGNUM:%li", stack_a->value);

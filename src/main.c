@@ -12,7 +12,7 @@
 #include "../push_swap.h"
 void    ft_leaks(void)
 {
-    system("leaks -q push_swap");
+    system("leaks -q push_swap2");
 }
 
 int main(int argc, char **argv)
@@ -65,9 +65,9 @@ int main(int argc, char **argv)
 void    ft_print_stack(t_stack *stack_a, t_stack *stack_b)
 {
     if (stack_a == NULL)
-        printf("\nStack_a is null");
+        printf("\n\nStack_a is null");
     if (stack_b == NULL)
-        printf("\nStack_b is null");
+        printf("\n\nStack_b is null");
     while (stack_a)
     {
        printf("\nSTACK_A:%ld", stack_a->value);
@@ -76,7 +76,7 @@ void    ft_print_stack(t_stack *stack_a, t_stack *stack_b)
     printf("\n\n\n");
     while (stack_b)
     {
-       printf("\nSTACK_B:%ld", stack_b->value);
+       printf("\n\nSTACK_B:%ld", stack_b->value);
        stack_b = stack_b->next;
     }
 }

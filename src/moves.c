@@ -14,39 +14,33 @@
 void    ft_push_ab(t_stack **stack_from, t_stack **stack_dest)
 {
     t_stack *temp;
-    t_stack *aux;
-    
+
     if (!stack_from)
         return ;
-    temp = ft_newnode(0);
-    temp->value = (*stack_from)->value;
-    temp->index = (*stack_from)->index;
-    ft_stackadd_front(stack_dest, temp);
-    aux = (*stack_from)->next;
-    free(*stack_from);
-    *stack_from = aux;
-    //CREO QUE FUNCIONA OK SIN LEAKS
+
+    temp = (*stack_from)->next;
+    (*stack_from)->next = *stack_dest;
+    *stack_dest = *stack_from;
+    *stack_from = temp;
+    
 }
 
 void    ft_swap_ab(t_stack **stack)
 {
-    t_stack *temp;
-    t_stack *aux;
+    t_stack *nodo3;
+    t_stack *nodo1;
 
-    if (!*stack || ft_stacksize(*stack) < 3)
+    if (!*stack || ft_stacksize(*stack) < 2)
         return ;
-    aux = (*stack);
 
-    temp = ft_newnode(0);
-    temp->value = (*stack)->value;
-    temp->index = (*stack)->index;
-    free (*stack);
-    (*stack) = (*stack)->next;
-    aux->next = temp;
-
-    //printf("PROBANDO%li", temp->value);
-    //free(*stack);
-    //ESTAMOS EN ELLO.....LEAKS AKI.
+    nodo1 = *stack;
+    nodo3 = (*stack)->next->next;
+    (*stack)->next->next = *stack; //El segundo apunta al primero
+    *stack = (*stack)->next; //El primero ahora va a ser el nodo2
+    (*stack)->next = nodo1; //El primer nodo va a apuntar al nodo1
+    nodo1->next = nodo3; //El nodo1 va a apuntar al nodo3
+    //PUTA RAYADA. FUNCIONA SIN LEAKS
     
+
     
 }
