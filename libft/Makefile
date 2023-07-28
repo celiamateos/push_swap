@@ -57,7 +57,14 @@ SRC = ft_isalpha.c \
 	  ft_lstclear_bonus.c \
 	  ft_lstadd_back_bonus.c \
 	  ft_lstiter_bonus.c \
-	  ft_lstmap_bonus.c
+	  ft_lstmap_bonus.c \
+	  ./ft_printf/ft_printf.c \
+	  ./ft_printf/ft_putchr_pf.c \
+	  ./ft_printf/ft_putstr_pf.c \
+	  ./ft_printf/ft_putnbr_pf.c \
+	  ./ft_printf/ft_putptr_pf.c \
+	  ./ft_printf/ft_puthex.c \
+	  ./ft_printf/ft_putun.c
 SRC_BONUS = ft_lstnew_bonus.c \
 			ft_lstadd_front_bonus.c \
 			ft_lstsize_bonus.c \
