@@ -19,10 +19,16 @@ void    ft_fill_stack(char *arg, t_stack **stack_a)
     int i;
     int is_str;
 
+
     i = 0;
     is_str = 0;
     while (arg[i])
     {
+        /*if (arg[i] == '34')
+        {
+            arg[i] = ' ';
+            i = 0;
+        }*/
         if ((arg[i] > '9' && arg[i] != ' ' && arg[i] != '-')
             || (arg[i] < '0' && arg[i] != ' ' && arg[i] != '-')
             || (arg[i] == '-' && arg[i + 1] == ' ')
@@ -52,6 +58,7 @@ void ft_is_str(char *str, t_stack **stack_a)
     while (array[i])
     {
         nb = ft_atoi_pushswap(array[i], stack_a);
+        printf("\nNB:%ld", nb);
         if (nb > INT_MAX || nb < INT_MIN)
             ft_error1(stack_a, 2);
         node = ft_newnode(nb);
@@ -69,7 +76,8 @@ void ft_is_num(char *str, t_stack **stack_a)
     long int    nb;
 
     nb = 0;
-    nb = ft_atoi(str);
+    nb = ft_atoi_pushswap(str, stack_a);
+    //nb = ft_atoi(str);
     if (nb > INT_MAX || nb < INT_MIN)
         ft_error1(stack_a, 2);
     node = ft_newnode(nb);

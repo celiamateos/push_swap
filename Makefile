@@ -28,8 +28,8 @@ CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 RM = rm -f
 LIBFT_DIR = libft/
 LIBFT = $(LIBFT_DIR)libft.a
-SRC = ./src/main.c ./src/ft_error.c ./src/ft_fill_stack.c ./src/ft_check_arg.c ./src/push_swap.c ./src/moves.c ./src/utils_stack.c ./src/utils_stack2.c \
-		./src/ft_index.c ./src/ft_atoi_pushswap.c
+SRC = ./src/main.c ./src/ft_error.c ./src/ft_fill_stack.c ./src/ft_check_arg.c ./src/push_swap.c ./src/utils_stack.c ./src/utils_stack2.c \
+		./src/ft_index.c ./src/ft_atoi_pushswap.c ./src/ft_push.c ./src/ft_swap.c ./src/ft_rotate.c ./src/ft_reverse_rotate.c
 OBJ = $(SRC:.c=.o)
 INCLUDE = push_swap.h
 #MAIN = ./src/main.c

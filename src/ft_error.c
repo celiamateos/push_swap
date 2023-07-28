@@ -22,6 +22,8 @@ void    ft_error1(t_stack **stack_a, int n)
             printf("\x1b[1;31m\nError, repeated numbers\x1b[0m");
     if (n == 4)
         printf("\x1b[1;31m\nError, Numbers is sorted\x1b[0m");
+    if (n == 5)
+        printf("\x1b[1;31m\nError, Numbers should be < INT_MAX and > INT_MIN \x1b[0m");
     if (stack_a)
     {
         ft_stackclear(stack_a);
