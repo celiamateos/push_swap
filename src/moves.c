@@ -56,32 +56,16 @@ void    ft_swap_ab(t_stack *stack)
     stack->next->index = index;
 }
 
-void ft_reverse_rotate(t_stack *stack)
+void ft_reverse_rotate(t_stack **stack)
 {
-    long int nb;
-    int     index;
+    t_stack *beforelast;
+    t_stack *last;
 
-    long int nb2;
-    int     index2;
-    t_stack *tmp;
-    if (ft_stacksize(stack) == 2)
-    {
-        ft_swap_ab(stack);
-        return ;
-    }
-    tmp = ft_stacklast(stack);
-    nb = tmp->value;
-    index = tmp->index;
-    printf("\n%ld\n%d", nb, index);
-    nb2 = stack->value;
-    index2 = stack->index;
-    stack->value = nb;
-    stack->index = index;
-    stack = stack->next;
-    while (stack->next->next!= NULL)
-    {
-        
-    }
-
-
+    beforelast = *stack;
+    while ((beforelast->next != NULL) && (beforelast->next->next != NULL))
+        beforelast = beforelast->next;
+    last = ft_stacklast(*stack);
+    last->next = *stack;
+    *stack = last;
+    beforelast->next = NULL;
 }

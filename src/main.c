@@ -54,9 +54,9 @@ int main(int argc, char **argv)
     ft_print_stack(*stack_a, *stack_b);
     //ft_swap_ab(*stack_a);
     //ft_push_ab(stack_a, stack_b);
-    ft_reverse_rotate(*stack_a);
-    printf("\n\n\n\n DESPUÉS DE ROTATE:");
-    ft_print_stack(*stack_a, *stack_b);
+    //ft_reverse_rotate(stack_a);
+    //printf("\n\n\n\n DESPUÉS DE ROTATE:");
+    //ft_print_stack(*stack_a, *stack_b);
     exit (1);
     return (0);
 }

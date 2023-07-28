@@ -49,7 +49,7 @@ void    ft_index(t_stack **stack_a, int stack_size);
 void    ft_bignum(t_stack *stack_a, t_stack *temp, int stack_size);
 void    ft_push_ab(t_stack **stack_from, t_stack **stack_dest);
 void    ft_swap_ab(t_stack *stack);
-void ft_reverse_rotate(t_stack *stack);
+void ft_reverse_rotate(t_stack **stack);
 //SALIDAS DE ERRORES
 
 void    ft_error1(t_stack **stack_a, int n);
