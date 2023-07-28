@@ -50,13 +50,16 @@ int main(int argc, char **argv)
         ft_error1(stack_a, 0);
     *stack_b = NULL;
     ft_index(stack_a, stack_size);
-
     ft_print_stack(*stack_a, *stack_b);
+    //ft_do_pa(stack_a, stack_b);
+    //ft_do_sb(stack_b);
     //ft_swap_ab(*stack_a);
     //ft_push_ab(stack_a, stack_b);
     //ft_reverse_rotate(stack_a);
-    //printf("\n\n\n\n DESPUÉS DE ROTATE:");
-    //ft_print_stack(*stack_a, *stack_b);
+    //ft_rotate(stack_a);
+    push_swap(stack_a, stack_b);
+    printf("\n\n\n\n DESPUÉS DE PUSH_SWAP:");
+    ft_print_stack(*stack_a, *stack_b);
     exit (1);
     return (0);
 }
