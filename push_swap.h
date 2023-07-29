@@ -68,7 +68,12 @@ void    ft_do_rrr(t_stack **stack_a, t_stack **stack_b);
 //PUSH_SWAP SORT
 void    push_swap(t_stack **stack_a, t_stack **stack_b);
 void    ft_sort_three(t_stack **stack_a);
+void    ft_sort_four(t_stack **stack_a, t_stack **stack_b);
+void    ft_sort_five(t_stack **a, t_stack **b);
+int     ft_is_sort(t_stack **stack);
+int     ft_min_index(t_stack *min);
 //SALIDAS DE ERRORES
+
 
 void    ft_error1(t_stack **stack_a, int n);
 # endif
