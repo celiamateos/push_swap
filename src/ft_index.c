@@ -12,21 +12,43 @@
 
 #include "../push_swap.h"
 
-void    ft_index(t_stack **stack_a, int stack_size)
+void    ft_index(t_stack **a, int stack_size)
 {
-    t_stack **temp;
-
-    //temp = (t_stack **)malloc(sizeof(t_stack));
-    temp = stack_a;
-    printf("\nStack_size%i\n\n", stack_size);
+    t_stack *temp;
+    long int     value;
+ 
+    temp = *a;
+    value = 0;
     while (stack_size > 0)
     {
-        ft_bignum(*stack_a, *temp, stack_size);
+        temp = *a;
+        while (temp != NULL)
+        {
+            if (temp->value > value && temp->index == -1)
+                value = temp->value;
+            temp = temp->next;
+        }
+        printf("\nBIGNUM:%li", value);
+        temp = *a;
+        while (temp != NULL)
+        {
+            if (temp->value == value)
+                temp->index = stack_size;
+            temp = temp->next;
+        }
+        value = 0;
         stack_size--;
+        //printf("\n         index =%i", temp->index);
     }
+    /*while (stack_size > 0)
+    {
+        ft_bignum(stack_a, temp, stack_size);
+        stack_size--;
+    }*/
 }
 
-void    ft_bignum(t_stack *stack_a, t_stack *temp, int stack_size)
+
+/*void    ft_bignum(t_stack *stack_a, t_stack *temp, int stack_size)
 {
     temp = stack_a->next;
     while (stack_a)
@@ -60,6 +82,6 @@ void    ft_bignum(t_stack *stack_a, t_stack *temp, int stack_size)
             stack_a = stack_a->next;
     }
     stack_a->index = stack_size;
-    printf("\nBIGNUM:%li", stack_a->value);
-    printf("\n         index =%i", stack_a->index);
-}
+ //   printf("\nBIGNUM:%li", stack_a->value);
+ //   printf("\n         index =%i", stack_a->index);
+}*/
