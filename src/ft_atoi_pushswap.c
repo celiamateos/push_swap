@@ -12,14 +12,13 @@
 
 #include "../push_swap.h"
 
-int	ft_atoi_pushswap(const char *str, t_stack **stack_a)
+long int	ft_atoi_pushswap(const char *str, t_stack **stack_a)
 {
 	unsigned int	i;
-	unsigned int	result;
+	unsigned long int	result;
 	unsigned int	sign;
 	long long	check;
 
-	printf("\nATOI:%s", str);
 	i = 0;
 	result = 0;
 	sign = 1;

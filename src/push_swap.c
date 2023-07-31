@@ -22,18 +22,14 @@ void    push_swap(t_stack **stack_a,  t_stack **stack_b)
     if (ft_stacksize(*stack_a) == 5)
       ft_sort_five(stack_a, stack_b);
     else
-        ft_sort(stack_a, stack_b);
+        ft_radix_sort(stack_a, stack_b);
 }
 
 void    ft_sort_five(t_stack **a, t_stack **b)
 {
     int min;
     min = ft_min_index(*a);
-    printf("\nMIN_INDEX:%d", min);
-    /*if ((*a)->index + 1 == (*a)->next->index &&
-        (*a)->next->index + 1 == (*a)->next->next->index &&
-        (*a)->next->next->index + 1 == (*a)->next->next->next->index)
-        return ;*/
+    //printf("\nMIN_INDEX:%d", min);
     if ((*a)->next->index == min)
         ft_do_sa(a);
     else if ((*a)->next->next->index == min)
@@ -151,24 +147,53 @@ int   ft_is_sort(t_stack **stack)
     return (0);
 }
 
-void    ft_sort(t_stack **a, t_stack **b)
+void    ft_radix_sort(t_stack **a, t_stack **b)
 {
-    int index_max;
-    int *members;
+    t_stack *temp;
     int i;
+    int j;
+    int len_stack;
+    int max_bits;
 
-    i = 5;
-    index_max = ft_stacksize(a);
-    while (i != 0)
+    i = 0;
+    temp = *a;
+    max_bits = ft_max_bits(a);
+    len_stack = ft_stacksize(*a);
+    while (i < max_bits)
     {
-        members[i] = index_max;
-        index_max--;
-        i--;
-    }
-    while (members[i])
-    {
-        printf("\nmembers:%d", members[i])
+        j = 0;
+        while (j++ < len_stack)
+        {
+            temp = *a;
+            if (((temp->index >> i) & 1) == 1)
+                ft_do_ra(a);
+            else
+                ft_do_pb(a, b);
+        }
+        while (ft_stacksize(*b) != 0)
+            ft_do_pa(b, a);
         i++;
     }
 
 }
+
+int   ft_max_bits(t_stack **a)
+{
+    t_stack *temp;
+    int     index_max;
+    int     max_bits;
+
+    temp = *a;
+    index_max = temp->index;
+    max_bits = 0;
+    while (temp)
+    {
+        if (temp->index > index_max)
+            index_max = temp->index;
+        temp = temp->next;
+    }
+    while ((index_max >> max_bits) != 0)
+        max_bits++;
+    return (max_bits);
+}
+

@@ -41,13 +41,14 @@ void    ft_fill_stack(char *arg, t_stack **stack_a);
 void    ft_is_str(char *str, t_stack **stack_a);
 void    ft_is_num(char *str, t_stack **stack_a);
 void    ft_check_arg(t_stack **stack_a);
-int	    ft_atoi_pushswap(const char *str, t_stack **stack_a);
+long int    ft_atoi_pushswap(const char *str, t_stack **stack_a);
 void	ft_check_char(char c, t_stack **stack_a);
 int     ft_repeated_number(t_stack *stack_a);
 int     ft_numbers_is_sorted(t_stack *stack_a);
 void    ft_print_stack(t_stack  *stack_a, t_stack *stack_b);
 void    ft_index(t_stack **stack_a, int stack_size);
-void    ft_bignum(t_stack *stack_a, t_stack *temp, int stack_size);
+//void    ft_bignum(t_stack *stack_a, t_stack *temp, int stack_size);
+
 
 //PUSH_SWAP MOVES
 void    ft_push_ab(t_stack **stack_from, t_stack **stack_dest);
@@ -72,6 +73,8 @@ void    ft_sort_four(t_stack **stack_a, t_stack **stack_b);
 void    ft_sort_five(t_stack **a, t_stack **b);
 int     ft_is_sort(t_stack **stack);
 int     ft_min_index(t_stack *min);
+void    ft_radix_sort(t_stack **a, t_stack **b);
+int   ft_max_bits(t_stack **a);
 //SALIDAS DE ERRORES
 
 
