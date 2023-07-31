@@ -68,17 +68,17 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	row = 0;
 	if (!s)
-		return (NULL);
+		exit (1);
 	arraystr = malloc((ft_countwords(s, c) + 1) * sizeof(char *));
 	if (!arraystr)
-		return (NULL);
+		exit (1);
 	while (row < ft_countwords(s, c))
 	{
 		if (s[i] != '\0' && s[i] != c)
 		{
 			arraystr[row] = ft_substr(s, i, ft_lenstring(s, c, i));
 			if (ft_desmalokeo(arraystr, row++) == 1)
-				return (NULL);
+				exit (1);
 			i += ft_lenstring(s, c, i);
 		}
 		else

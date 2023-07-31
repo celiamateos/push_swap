@@ -24,12 +24,13 @@ BROWN =	\033[38;2;184;143;29m
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -g3
+#-fsanitize=address -g3
 RM = rm -f
 LIBFT_DIR = libft/
 LIBFT = $(LIBFT_DIR)libft.a
 SRC = ./src/main.c ./src/ft_error.c ./src/ft_fill_stack.c ./src/ft_check_arg.c ./src/push_swap.c ./src/utils_stack.c ./src/utils_stack2.c \
-		./src/ft_index.c ./src/ft_atoi_pushswap.c ./src/ft_push.c ./src/ft_swap.c ./src/ft_rotate.c ./src/ft_reverse_rotate.c
+		./src/ft_index.c ./src/ft_atoi_pushswap.c ./src/ft_push.c ./src/ft_swap.c ./src/ft_rotate.c ./src/ft_reverse_rotate.c ./src/ft_sort_few_numbers.c
 OBJ = $(SRC:.c=.o)
 INCLUDE = push_swap.h
 #MAIN = ./src/main.c

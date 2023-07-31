@@ -10,34 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
-/*@brief ALOCA MEMORIA*/
-//Crea un nodo y lo retorna, el parametro es el contenido con el que crear el nodo.
-t_stack *ft_newnode(long int nb)
+/*@brief ALOCA MEMORIA, exit si falla la reserva de memoria*/
+t_stack	*ft_newnode(int nb)
 {
-    t_stack *node;
+	t_stack	*node;
 
-    node = (t_stack *)malloc(sizeof(t_stack));
-    if (!node)
-        return (NULL);
-    node->value = nb;
+	node = (t_stack *)malloc(sizeof(t_stack));
+	if (!node)
+		exit (1);
+	node->value = nb;
 	node->index = -1;
-    node->next = NULL;
-    return (node);
+	node->next = NULL;
+	return (node);
 }
-//Añade el nodo al final del stack (abajo)
-void ft_stackadd_back(t_stack **stack, t_stack *node)
-{
-    t_stack *temp;
 
-    if (!node)
-        return ;
-    if (!*stack)
-        *stack = node;
-    temp = ft_stacklast(*stack);
-    temp->next = node;
-    node->next = NULL;
+void	ft_stackadd_back(t_stack **stack, t_stack *node)
+{
+	t_stack	*temp;
+
+	if (!node)
+		return ;
+	if (!*stack)
+		*stack = node;
+	temp = ft_stacklast(*stack);
+	temp->next = node;
+	node->next = NULL;
 }
-//Añade el nodo al principio del stack (arriba)
+
 void	ft_stackadd_front(t_stack **stack, t_stack *node)
 {
 	if (stack)
@@ -48,7 +47,6 @@ void	ft_stackadd_front(t_stack **stack, t_stack *node)
 	}
 }
 
-//Devuelve el último nodo del stack, el de abajo del todo.
 t_stack	*ft_stacklast(t_stack *node)
 {
 	t_stack	*lastnode;
@@ -62,7 +60,6 @@ t_stack	*ft_stacklast(t_stack *node)
 	return (lastnode);
 }
 
-//Devuelve la cantidad de nodos que tiene el stack.
 int	ft_stacksize(t_stack *lst)
 {
 	int		i;

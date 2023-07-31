@@ -11,28 +11,26 @@
 /* ************************************************************************** */
 #include "../push_swap.h"
 
-void    ft_push_ab(t_stack **stack_from, t_stack **stack_dest)
+void	ft_push_ab(t_stack **stack_from, t_stack **stack_dest)
 {
-    t_stack *temp;
+	t_stack	*temp;
 
-    if (!stack_from)
-        return ;
-
-    temp = (*stack_from)->next;
-    (*stack_from)->next = *stack_dest;
-    *stack_dest = *stack_from;
-    *stack_from = temp;
-    
+	if (!stack_from)
+		return ;
+	temp = (*stack_from)->next;
+	(*stack_from)->next = *stack_dest;
+	*stack_dest = *stack_from;
+	*stack_from = temp;
 }
 
-void    ft_do_pa(t_stack **stack_a, t_stack **stack_b)
+void	ft_do_pa(t_stack **stack_a, t_stack **stack_b)
 {
-    ft_push_ab(stack_a, stack_b);
-    ft_printf("pa\n");
+	ft_push_ab(stack_a, stack_b);
+	ft_printf("pa\n");
 }
 
-void    ft_do_pb(t_stack **stack_b, t_stack **stack_a)
+void	ft_do_pb(t_stack **stack_b, t_stack **stack_a)
 {
-    ft_push_ab(stack_b, stack_a);
-    ft_printf("pb\n");
+	ft_push_ab(stack_b, stack_a);
+	ft_printf("pb\n");
 }

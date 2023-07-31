@@ -11,57 +11,53 @@
 /* ************************************************************************** */
 #include "../push_swap.h"
 
-void    ft_check_arg(t_stack **stack_a)
+void	ft_check_arg(t_stack **stack_a)
 {
-    if (ft_repeated_number(*stack_a) == 1)
-        ft_error1(stack_a, 3);
-    if (ft_numbers_is_sorted(*stack_a) == 1)
-        ft_error1(stack_a, 4);
+	if (ft_repeated_number(*stack_a) == 1)
+		ft_error1(stack_a, 3);
+	if (ft_numbers_is_sorted(*stack_a) == 1)
+		ft_error1(stack_a, 4);
 }
 
-int    ft_repeated_number(t_stack *stack_a)
+int	ft_repeated_number(t_stack *stack_a)
 {
-    t_stack *temp;
-    int     repeated;
+	t_stack	*temp;
+	int		repeated;
 
-    repeated = 0;
-    while (stack_a->next != NULL)
-    {
-        temp = stack_a->next;
-        while (temp)
-        {
-            if (temp->value == stack_a->value)
-            {
-                repeated = 1;
-                break ;
-            }
-            //printf("\nError, números repetidos");
-            //printf("\ntemp:%li", temp->value);
-            //printf("\nstack_a:%li", stack_a->value);
-            temp = temp->next;
-        }
-        if (repeated == 1)
-            return (1);
-        stack_a = stack_a->next;
-    }
-    return (0);
+	repeated = 0;
+	while (stack_a->next != NULL)
+	{
+		temp = stack_a->next;
+		while (temp)
+		{
+			if (temp->value == stack_a->value)
+			{
+				repeated = 1;
+				break ;
+			}
+			temp = temp->next;
+		}
+		if (repeated == 1)
+			return (1);
+		stack_a = stack_a->next;
+	}
+	return (0);
 }
 
-int   ft_numbers_is_sorted(t_stack *stack_a)
+int	ft_numbers_is_sorted(t_stack *stack_a)
 {
-    t_stack *temp;
-    temp = stack_a;
-    temp = temp->next;
-    while (temp->next != NULL)
-    {
-        //printf("\ntemp:%li", temp->value);
-        //printf("\nstack_a:%li", stack_a->value);
-        if (!(stack_a->value < temp->value))
-            break ;
-        stack_a = stack_a->next;
-        temp = temp->next;
-    }
-    if (temp->next == NULL && stack_a->value < temp->value)
-        return (1);
-    return (0);
+	t_stack	*temp;
+
+	temp = stack_a;
+	temp = temp->next;
+	while (temp->next != NULL)
+	{
+		if (!(stack_a->value < temp->value))
+			break ;
+		stack_a = stack_a->next;
+		temp = temp->next;
+	}
+	if (temp->next == NULL && stack_a->value < temp->value)
+		return (1);
+	return (0);
 }

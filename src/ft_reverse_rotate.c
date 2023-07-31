@@ -11,35 +11,35 @@
 /* ************************************************************************** */
 #include "../push_swap.h"
 
-void ft_reverse_rotate(t_stack **stack)
+void	ft_reverse_rotate(t_stack **stack)
 {
-    t_stack *beforelast;
-    t_stack *last;
+	t_stack	*beforelast;
+	t_stack	*last;
 
-    beforelast = *stack;
-    while ((beforelast->next != NULL) && (beforelast->next->next != NULL))
-        beforelast = beforelast->next;
-    last = ft_stacklast(*stack);
-    last->next = *stack;
-    *stack = last;
-    beforelast->next = NULL;
+	beforelast = *stack;
+	while ((beforelast->next != NULL) && (beforelast->next->next != NULL))
+		beforelast = beforelast->next;
+	last = ft_stacklast(*stack);
+	last->next = *stack;
+	*stack = last;
+	beforelast->next = NULL;
 }
 
-void    ft_do_rra(t_stack **stack_a)
+void	ft_do_rra(t_stack **stack_a)
 {
-    ft_reverse_rotate(stack_a);
-    printf("rra\n");
+	ft_reverse_rotate(stack_a);
+	ft_printf("rra\n");
 }
 
-void    ft_do_rrb(t_stack **stack_b)
+void	ft_do_rrb(t_stack **stack_b)
 {
-    ft_reverse_rotate(stack_b);
-    printf("rrb\n");
+	ft_reverse_rotate(stack_b);
+	ft_printf("rrb\n");
 }
 
-void    ft_do_rrr(t_stack **stack_a, t_stack **stack_b)
+void	ft_do_rrr(t_stack **stack_a, t_stack **stack_b)
 {
-    ft_reverse_rotate(stack_a);
-    ft_reverse_rotate(stack_b);
-    printf("rrr\n");
+	ft_reverse_rotate(stack_a);
+	ft_reverse_rotate(stack_b);
+	ft_printf("rrr\n");
 }
