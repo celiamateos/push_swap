@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
-/*@brief ALOCA MEMORIA, exit si falla la reserva de memoria*/
+/*@brief ALOCA MEMORIA, NULL si falla la reserva de memoria*/
 t_stack	*ft_newnode(int nb)
 {
 	t_stack	*node;
 
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (!node)
-		exit (1);
+		return (NULL);
 	node->value = nb;
 	node->index = -1;
 	node->next = NULL;

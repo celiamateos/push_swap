@@ -43,18 +43,15 @@ void	ft_fill_stack(char *arg, t_stack **stack_a)
 void	ft_is_str(char *str, t_stack **stack_a)
 {
 	char	**array;
-	t_stack	*node;
 	int		i;
-	int		nb;
 
-	nb = 0;
 	i = 0;
 	array = ft_split(str, ' ');
+	if (array == NULL)
+		ft_error1(stack_a, 0);
 	while (array[i])
 	{
-		nb = ft_atoi_pushswap(array[i], stack_a);
-		node = ft_newnode(nb);
-		ft_stackadd_back(stack_a, node);
+		ft_is_num(array[i], stack_a);
 		if (array[i] != NULL)
 			free (array[i]);
 		i++;
@@ -70,5 +67,7 @@ void	ft_is_num(char *str, t_stack **stack_a)
 	nb = 0;
 	nb = ft_atoi_pushswap(str, stack_a);
 	node = ft_newnode(nb);
+	if (node == NULL)
+		ft_error1(stack_a, 0);
 	ft_stackadd_back(stack_a, node);
 }

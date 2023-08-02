@@ -36,6 +36,7 @@ void	ft_stackclear(t_stack **stack);
 
 //PUSH_SWAP PARSE
 int     main(int argc, char **argv);
+void	ft_start(t_stack **stack_a);
 void    ft_fill_stack(char *arg, t_stack **stack_a);
 void    ft_is_str(char *str, t_stack **stack_a);
 void    ft_is_num(char *str, t_stack **stack_a);
