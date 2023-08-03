@@ -20,8 +20,8 @@ int	main(int argc, char **argv)
 {
 	//atexit(ft_leaks);
 	t_stack	**stack_a;
-	int i;
-	
+	int		i;
+
 	i = 1;
 	stack_a = (t_stack **)malloc(sizeof(t_stack));
 	if (!stack_a || argc < 2)
@@ -60,20 +60,20 @@ void	ft_start(t_stack **stack_a)
 void	ft_print_stack(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a == NULL)
-		printf("\n\nStack_a is null");
+		ft_printf("\n\nStack_a is null");
 	if (stack_b == NULL)
-		printf("\n\nStack_b is null");
+		ft_printf("\n\nStack_b is null");
 	while (stack_a)
 	{
-	   printf("\nSTACK_A VALUE:%d", stack_a->value);
-	   printf("\nSTACK_A      index:%d", stack_a->index);
-	   stack_a = stack_a->next;
+		ft_printf("\nSTACK_A VALUE:%d", stack_a->value);
+		ft_printf("\nSTACK_A      index:%d", stack_a->index);
+		stack_a = stack_a->next;
 	}
-	printf("\n\n\n");
+	ft_printf("\n\n\n");
 	while (stack_b)
 	{
-	   printf("\n\nSTACK_B:%d", stack_b->value);
-	   stack_b = stack_b->next;
+		ft_printf("\n\nSTACK_B:%d", stack_b->value);
+		stack_b = stack_b->next;
 	}
 }
 /*int main (void)
