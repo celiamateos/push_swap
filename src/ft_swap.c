@@ -10,22 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
-/*void    ft_swap_ab(t_stack **stack)
-{
-	t_stack *nodo3;
-	t_stack *nodo1;
-
-	if (!*stack || ft_stacksize(*stack) < 2)
-		return ;
-
-	nodo1 = *stack;
-	nodo3 = (*stack)->next->next;
-	(*stack)->next->next = *stack; //El segundo apunta al primero
-	*stack = (*stack)->next; //El primero ahora va a ser el nodo2
-	(*stack)->next = nodo1; //El primer nodo va a apuntar al nodo1
-	nodo1->next = nodo3; //El nodo1 va a apuntar al nodo3
-	//PUTA RAYADA. FUNCIONA SIN LEAKS
-}*/
 
 void	ft_swap_ab(t_stack *stack)
 {

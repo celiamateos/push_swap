@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
-/* Esta función toma cada argumento pasado como parametro y verifica que los
-caracteres estén entre 0 y 9 y añade cada número a cada uno de los nodos que
-conformaran el stack_a. 
-En caso de que haya varios números entre comillas
-(is_str, entonces hace un split y atoi.)*/
+
 void	ft_fill_stack(char *arg, t_stack **stack_a)
 {
 	int	i;

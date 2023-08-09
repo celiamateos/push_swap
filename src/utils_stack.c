@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
-/*@brief ALOCA MEMORIA, NULL si falla la reserva de memoria*/
+/*@brief ALOCATE MEMORY, NULL if there are some error*/
 t_stack	*ft_newnode(int nb)
 {
 	t_stack	*node;

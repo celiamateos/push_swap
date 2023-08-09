@@ -13,7 +13,6 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 # include <string.h>
 # include <fcntl.h>
 # include <stdarg.h>

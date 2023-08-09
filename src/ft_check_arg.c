@@ -16,7 +16,7 @@ void	ft_check_arg(t_stack **stack_a)
 	if (ft_repeated_number(*stack_a) == 1)
 		ft_error1(stack_a, 3);
 	if (ft_numbers_is_sorted(*stack_a) == 1)
-		ft_error1(stack_a, 4);
+		ft_error1(stack_a, 0);
 }
 
 int	ft_repeated_number(t_stack *stack_a)

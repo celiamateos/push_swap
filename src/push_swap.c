@@ -6,7 +6,7 @@
 /*   By: cmateos- <cmateos-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 23:28:26 by cmateos-          #+#    #+#             */
-/*   Updated: 2023/07/11 18:10:57 by cmateos-         ###   ########.fr       */
+/*   Updated: 2023/08/09 19:00:59 by cmateos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
@@ -15,6 +15,8 @@ void	push_swap(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!stack_a || !stack_b)
 		return ;
+	if (ft_stacksize(*stack_a) == 2)
+		ft_do_sa(stack_a);
 	if (ft_stacksize(*stack_a) == 3)
 		ft_sort_three(stack_a);
 	else if (ft_stacksize(*stack_a) == 4)
