@@ -33,10 +33,10 @@ int	ft_atoi_pushswap(const char *str, t_stack **stack_a)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (result > INT_MAX || result * sign < INT_MIN)
-			ft_error1(stack_a, 4);
 		result = result * 10 + str[i++] - '0';
-	}
+		if ((result * sign) > (long)INT_MAX || (result * sign) < (long)INT_MIN)
+			ft_error1(stack_a, 4);
+	}	
 	return (result * sign);
 }
 

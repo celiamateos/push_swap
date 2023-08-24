@@ -14,13 +14,13 @@
 void	ft_error1(t_stack **stack_a, int n)
 {
 	if (n == 1)
-		ft_printf("\x1b[1;31m\nError, invalid character\x1b[0m");
+		ft_putstr_fd("\x1b[1;31mError\n\x1b[0m", 2);
 	if (n == 2)
-		ft_printf("\x1b[1;31m\nNumber can´t should be INT_MAX or INT_MIN\x1b[0m");
+		ft_putstr_fd("\x1b[1;31mError\n\x1b[0m", 2);
 	if (n == 3)
-		ft_printf("\x1b[1;31m\nError, repeated numbers\x1b[0m");
+		ft_putstr_fd("\x1b[1;31mError\n\x1b[0m", 2);
 	if (n == 4)
-		ft_printf("\x1b[1;31m\nError, Number is > INT_MAX or < INT_MIN \x1b[0m");
+		ft_putstr_fd("\x1b[1;31mError\n\x1b[0m", 2);
 	if (stack_a)
 	{
 		ft_stackclear(stack_a);
